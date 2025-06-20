@@ -49,7 +49,7 @@ removeColumnButton.addEventListener("click", () => {
 
 // Choose a color
 const colorDropdown = document.getElementById("color-select");
-let color = "white";
+let color = "";
 colorDropdown.addEventListener("change", () => {
   color = colorDropdown.value;
 })
@@ -65,3 +65,12 @@ for(let i = 0; i < cells.length; i++) {
   })
 }
 
+// Fill all uncolored cells with selected color
+const fillUncoloredButton = document.getElementById("fill-uncolored");
+fillUncoloredButton.addEventListener("click", () => {
+  for(let i = 0; i < cells.length; i++) {
+    if(cells[i].style.backgroundColor == "") {
+      cells[i].style.backgroundColor = color;
+    }
+  }
+})  
