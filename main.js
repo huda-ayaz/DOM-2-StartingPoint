@@ -28,3 +28,12 @@ addColumnButton.addEventListener("click", () => {
   }
   columns++;
 })
+
+// Remove rows from grid
+const removeRowButton = document.getElementById("remove-row");
+removeRowButton.addEventListener("click", () => {
+  if(rows) {
+    table.deleteRow(rows - 1);
+    rows--;
+  }
+})
