@@ -11,8 +11,8 @@ let rows = table.rows.length;
 let columns = table.rows[0].cells.length;
 
 // Add rows to grid
-const addButton = document.getElementById("add-row");
-addButton.addEventListener("click", () => {
+const addRowButton = document.getElementById("add-row");
+addRowButton.addEventListener("click", () => {
   table.insertRow(rows - 1);
   for(let i = 0; i < columns; i++) {
     table.rows[rows - 1].insertCell(0);
