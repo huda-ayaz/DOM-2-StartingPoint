@@ -46,3 +46,22 @@ removeColumnButton.addEventListener("click", () => {
   }
   columns--;
 })
+
+// Choose a color
+const colorDropdown = document.getElementById("color-select");
+let color = "white";
+colorDropdown.addEventListener("change", () => {
+  color = colorDropdown.value;
+})
+
+// Change color of cell when clicked
+const cells = document.getElementsByTagName("td");
+console.log(cells);
+for(let i = 0; i < cells.length; i++) {
+  cells[i].addEventListener("click", () => {
+    cells[i].style.backgroundColor = color;
+    console.log(cells[i].style.backgroundColor);
+    console.log("clicked");
+  })
+}
+
