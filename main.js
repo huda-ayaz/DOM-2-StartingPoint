@@ -7,15 +7,24 @@ root.addEventListener("click", (event) => {
 });
 
 const table = document.getElementsByTagName("table")[0];
-const rows = table.rows.length;
-const columns = table.rows[0].cells.length;
+let rows = table.rows.length;
+let columns = table.rows[0].cells.length;
 
 // Add rows to grid
-const addButton = document.getElementById("add-row");
-addButton.addEventListener("click", () => {
+const addRowButton = document.getElementById("add-row");
+addRowButton.addEventListener("click", () => {
   table.insertRow(rows - 1);
   for(let i = 0; i < columns; i++) {
     table.rows[rows - 1].insertCell(0);
   }
+  rows++;
 })
 
+// Add columns to grid
+const addColumnButton = document.getElementById("add-column");
+addColumnButton.addEventListener("click", () => {
+  for(let i = 0; i < rows; i++) {
+    table.rows[i].insertCell(0);
+  }
+  columns++;
+})
