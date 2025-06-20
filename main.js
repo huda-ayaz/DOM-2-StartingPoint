@@ -37,3 +37,12 @@ removeRowButton.addEventListener("click", () => {
     rows--;
   }
 })
+
+// Remove columns from grid
+const removeColumnButton = document.getElementById("remove-column");
+removeColumnButton.addEventListener("click", () => {
+  for(let i = 0; i < rows; i++) {
+    table.rows[i].deleteCell(0);
+  }
+  columns--;
+})
